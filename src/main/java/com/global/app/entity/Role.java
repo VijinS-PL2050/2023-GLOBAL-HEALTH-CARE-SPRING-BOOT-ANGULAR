@@ -34,7 +34,7 @@ public class Role {
 	
 	@NotNull(message = "is required")
 	@Size(min = 1, max = 25)
-	private String isActive="true";
+	private Boolean isActive=true;
 	
 	@OneToMany(mappedBy = "role")
 	private List<User> user;
