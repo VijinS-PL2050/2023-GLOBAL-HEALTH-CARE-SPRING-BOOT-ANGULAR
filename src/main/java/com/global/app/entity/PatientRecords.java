@@ -15,7 +15,10 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
@@ -66,9 +69,13 @@ public class PatientRecords {
 	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "patientRecords")
 	private List<Appointment> appointment;
 	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "patientRecords", cascade=CascadeType.ALL)
 	private List<BillAppoinment> billAppoinment;
 

@@ -11,7 +11,10 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
@@ -46,11 +49,13 @@ public class User {
 	@JoinColumn(name = "rId",insertable=false,updatable=false)
 	private Role role;
 	
-	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "user")
 	private DoctorDetails doctorDetails;
 	
-	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "user")
 	private StaffDeatils staffDeatils;
 

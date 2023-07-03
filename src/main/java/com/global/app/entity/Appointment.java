@@ -16,7 +16,10 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
@@ -59,10 +62,13 @@ public class Appointment {
 	@JoinColumn(name = "pId",insertable=false,updatable=false)
 	private PatientRecords patientRecords;
 	
-	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "appointment")
 	private TokenGenarator tokenGenarator;
 	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "appointment", cascade=CascadeType.ALL)
 	private BillAppoinment billAppoinment;
 

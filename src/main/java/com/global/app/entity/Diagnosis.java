@@ -14,7 +14,10 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 //here appointmant id is foreignkey
 
@@ -53,10 +56,13 @@ public class Diagnosis {
 	@JoinColumn(name = "tId",insertable=false,updatable=false)
 	private TokenGenarator tokenGenarator;
 	
-	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "diagnosis")
 	private List< MedicinePrescription> medicinePrescription;
 	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "diagnosis")
 	private List< TestPrescription> TestPrescription;
 

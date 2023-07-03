@@ -18,7 +18,10 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
@@ -94,7 +97,8 @@ public class DoctorDetails {
 	@JoinColumn(name = "uId",insertable=false,updatable=false)
 	private User user;
 	
-	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "doctorDetails",fetch = FetchType.EAGER)
 	private List<Appointment> appointment;
 

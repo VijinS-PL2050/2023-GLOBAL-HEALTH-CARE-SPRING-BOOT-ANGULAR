@@ -13,7 +13,10 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 
@@ -55,7 +58,8 @@ public class MedicinePrescription {
 	@JoinColumn(name = "msId",insertable=false,updatable=false)
 	private MedicinesStock medicinesStock;
 	
-	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "medicinePrescription")
 	private BillMedicine BillMedicine;
 

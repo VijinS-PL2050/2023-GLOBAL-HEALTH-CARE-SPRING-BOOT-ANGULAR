@@ -12,7 +12,10 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
@@ -40,7 +43,8 @@ public class TokenGenarator {
 	@JoinColumn(name = "aId",insertable=false,updatable=false)
 	private Appointment appointment;
 	
-	
+	@Getter(AccessLevel.NONE)
+	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "tokenGenarator")
 	private Diagnosis diagnosis;
 
