@@ -29,6 +29,7 @@ public class TestPrescription {
 	
 	private LocalDate testDay;
 	
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive;
 	
 	private Integer ttId;

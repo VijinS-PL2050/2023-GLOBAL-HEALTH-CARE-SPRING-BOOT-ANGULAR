@@ -41,6 +41,7 @@ public class Appointment {
 	private LocalDateTime appointmentValidity;
 	
 	@NotNull(message = "is required")
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
 	private Integer dId;

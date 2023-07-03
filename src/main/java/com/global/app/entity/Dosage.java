@@ -35,6 +35,7 @@ public class Dosage {
 	private Integer quantity;
 
 	@NotNull(message = "is required")
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 
 	@OneToMany(mappedBy = "dosage")

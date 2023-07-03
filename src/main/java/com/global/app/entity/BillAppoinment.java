@@ -35,6 +35,7 @@ public class BillAppoinment {
 	private Double billAmount;
 	
 	@NotNull(message = "is required")
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 
 	private Integer aId;

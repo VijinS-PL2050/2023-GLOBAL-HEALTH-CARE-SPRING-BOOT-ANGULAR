@@ -63,7 +63,7 @@ public class PatientRecords {
 	private LocalDate validityDate;
 	
 	@NotNull(message = "is required")
-	@Size(min = 1, max = 25)
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
 	@OneToMany(mappedBy = "patientRecords")

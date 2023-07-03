@@ -2,6 +2,7 @@ package com.global.app.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,6 +32,7 @@ public class TokenGenarator {
 	private LocalDateTime tokenTime;
 
 	@NotNull(message = "is required")
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
 	private Integer aId;

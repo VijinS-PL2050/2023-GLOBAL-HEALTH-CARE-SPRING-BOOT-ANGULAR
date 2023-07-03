@@ -37,6 +37,7 @@ public class TestReport {
 	private String actualValue;
 	
 	@NotNull(message = "is required")
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
 	@OneToOne(mappedBy="testReport")

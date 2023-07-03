@@ -38,6 +38,7 @@ public class User {
 	
 
 	@NotNull(message = "is required")
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
 	private Integer rId;

@@ -45,6 +45,7 @@ public class Tests {
 	private Integer testPrice;
 	
 	@NotNull(message = "is required")
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
 	@OneToMany(mappedBy = "tests")

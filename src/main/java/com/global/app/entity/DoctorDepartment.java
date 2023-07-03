@@ -33,8 +33,8 @@ public class DoctorDepartment {
 	private String departmentName;
 
 	@NotNull(message = "is required")
-	@Size(min = 1, max = 25)
-	private String isActive = "true";
+	@Column(nullable = false, columnDefinition = "TINYINT(1)")
+	private Boolean isActive = true;
 
 	@OneToMany(mappedBy = "doctorDepartment", fetch = FetchType.EAGER)
 	private List<DoctorDetails> doctorDetails;
