@@ -16,6 +16,7 @@ import javax.validation.constraints.Size;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -56,13 +57,13 @@ public class Diagnosis {
 	@JoinColumn(name = "tId",insertable=false,updatable=false)
 	private TokenGenarator tokenGenarator;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "diagnosis")
 	private List< MedicinePrescription> medicinePrescription;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "diagnosis")
 	private List< TestPrescription> TestPrescription;
 

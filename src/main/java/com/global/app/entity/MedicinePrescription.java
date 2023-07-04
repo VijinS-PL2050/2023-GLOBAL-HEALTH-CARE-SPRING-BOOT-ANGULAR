@@ -15,6 +15,7 @@ import javax.validation.constraints.Size;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -59,7 +60,7 @@ public class MedicinePrescription {
 	private MedicinesStock medicinesStock;
 	
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
+	@EqualsAndHashCode.Exclude
 	@OneToOne(mappedBy = "medicinePrescription")
 	private BillMedicine BillMedicine;
 

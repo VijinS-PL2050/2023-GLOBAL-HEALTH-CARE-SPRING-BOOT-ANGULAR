@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -45,6 +46,7 @@ public class TestPrescription {
 	@JoinColumn(name = "diId",insertable=false,updatable=false)
 	private Diagnosis diagnosis;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
 	@OneToOne(mappedBy="testPrescription")
 	private TestReport testReport;

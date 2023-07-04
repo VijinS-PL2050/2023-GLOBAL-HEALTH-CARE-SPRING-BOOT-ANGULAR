@@ -52,14 +52,12 @@ public class User {
 	
 	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "user")
 	private DoctorDetails doctorDetails;
 	
 	
 	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "user")
 	private StaffDeatils staffDeatils;
 

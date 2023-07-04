@@ -100,9 +100,8 @@ public class DoctorDetails {
 	@JoinColumn(name = "uId",insertable=false,updatable=false)
 	private User user;
 	
-	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
+	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy = "doctorDetails",fetch = FetchType.EAGER)
 	private List<Appointment> appointment;
 

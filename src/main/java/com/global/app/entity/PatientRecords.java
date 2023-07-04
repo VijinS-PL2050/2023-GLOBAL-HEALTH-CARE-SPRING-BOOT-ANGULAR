@@ -17,6 +17,7 @@ import org.hibernate.validator.constraints.Range;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -69,10 +70,12 @@ public class PatientRecords {
 	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "patientRecords")
 	private List<Appointment> appointment;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "patientRecords", cascade=CascadeType.ALL)
 	private List<BillAppoinment> billAppoinment;

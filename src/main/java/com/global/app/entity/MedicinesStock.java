@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -53,7 +54,7 @@ public class MedicinesStock {
 	private Boolean isActive=true;
 	
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
+	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy = "medicinesStock")
 	private List<MedicinePrescription> medicinePrescription;
 

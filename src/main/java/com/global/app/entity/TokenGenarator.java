@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,7 +48,7 @@ public class TokenGenarator {
 	private Appointment appointment;
 	
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
+	@EqualsAndHashCode.Exclude
 	@OneToOne(mappedBy = "tokenGenarator")
 	private Diagnosis diagnosis;
 
