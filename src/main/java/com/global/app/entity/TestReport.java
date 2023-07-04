@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
@@ -43,9 +44,11 @@ public class TestReport {
 	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
-	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
-	@OneToOne(mappedBy="testReport")
+	
+	
+	private Integer tpId;
+	@OneToOne
+	@JoinColumn(name = "tpId",insertable=false,updatable=false)
 	private TestPrescription testPrescription;
 
 	

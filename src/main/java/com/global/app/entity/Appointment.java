@@ -18,8 +18,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Data
@@ -62,13 +62,13 @@ public class Appointment {
 	@JoinColumn(name = "pId",insertable=false,updatable=false)
 	private PatientRecords patientRecords;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "appointment")
 	private TokenGenarator tokenGenarator;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "appointment", cascade=CascadeType.ALL)
 	private BillAppoinment billAppoinment;
 

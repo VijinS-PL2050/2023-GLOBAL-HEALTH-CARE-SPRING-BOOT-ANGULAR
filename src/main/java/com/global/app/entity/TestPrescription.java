@@ -12,7 +12,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.Size;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Data
@@ -42,9 +45,8 @@ public class TestPrescription {
 	@JoinColumn(name = "diId",insertable=false,updatable=false)
 	private Diagnosis diagnosis;
 	
-	private Integer trId;
-	@OneToOne
-	@JoinColumn(name = "trId",insertable=false,updatable=false)
+	@Getter(AccessLevel.NONE)
+	@OneToOne(mappedBy="testPrescription")
 	private TestReport testReport;
 	
 	

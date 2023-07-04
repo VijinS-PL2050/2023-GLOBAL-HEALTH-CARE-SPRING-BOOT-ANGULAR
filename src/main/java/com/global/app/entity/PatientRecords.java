@@ -70,12 +70,10 @@ public class PatientRecords {
 	private Boolean isActive=true;
 	
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "patientRecords")
 	private List<Appointment> appointment;
 	
 	@Getter(AccessLevel.NONE)
-	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "patientRecords", cascade=CascadeType.ALL)
 	private List<BillAppoinment> billAppoinment;
 

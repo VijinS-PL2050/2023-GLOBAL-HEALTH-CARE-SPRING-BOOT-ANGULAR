@@ -17,13 +17,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Component
 @Data
 public class DoctorDetails {
 
@@ -97,6 +100,7 @@ public class DoctorDetails {
 	@JoinColumn(name = "uId",insertable=false,updatable=false)
 	private User user;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
 	@Setter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "doctorDetails",fetch = FetchType.EAGER)

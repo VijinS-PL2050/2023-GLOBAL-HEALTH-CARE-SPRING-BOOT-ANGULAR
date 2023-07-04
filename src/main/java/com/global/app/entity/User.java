@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -49,11 +50,14 @@ public class User {
 	@JoinColumn(name = "rId",insertable=false,updatable=false)
 	private Role role;
 	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
 	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "user")
 	private DoctorDetails doctorDetails;
 	
+	
+	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
 	@Setter(AccessLevel.NONE)
 	@OneToOne(mappedBy = "user")
