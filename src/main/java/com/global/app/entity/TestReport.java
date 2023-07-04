@@ -44,8 +44,6 @@ public class TestReport {
 	@Column(nullable = false, columnDefinition = "TINYINT(1)")
 	private Boolean isActive=true;
 	
-	
-	
 	private Integer tpId;
 	@OneToOne
 	@JoinColumn(name = "tpId",insertable=false,updatable=false)
