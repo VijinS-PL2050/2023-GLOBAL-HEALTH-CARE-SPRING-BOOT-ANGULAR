@@ -63,6 +63,7 @@ public class Diagnosis {
 	@JoinColumn(name = "pId",insertable=false,updatable=false)
 	private PatientRecords patientRecords;
 	
+	
 	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "diagnosis")
