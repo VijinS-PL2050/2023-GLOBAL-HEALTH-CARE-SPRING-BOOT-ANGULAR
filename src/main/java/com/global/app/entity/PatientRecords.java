@@ -75,6 +75,12 @@ public class PatientRecords {
 	@OneToMany(mappedBy = "patientRecords")
 	private List<Appointment> appointment;
 	
+	
+	@EqualsAndHashCode.Exclude
+	@Getter(AccessLevel.NONE)
+	@OneToMany(mappedBy = "patientRecords")
+	private List<Diagnosis> diagnosis;
+	
 	@EqualsAndHashCode.Exclude
 	@Getter(AccessLevel.NONE)
 	@OneToMany(mappedBy = "patientRecords", cascade=CascadeType.ALL)
