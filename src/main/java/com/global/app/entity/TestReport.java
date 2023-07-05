@@ -2,6 +2,7 @@ package com.global.app.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Size;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,6 +50,11 @@ public class TestReport {
 	@OneToOne
 	@JoinColumn(name = "tpId",insertable=false,updatable=false)
 	private TestPrescription testPrescription;
+	
+	@EqualsAndHashCode.Exclude
+	@Getter(AccessLevel.NONE)
+	@OneToOne(mappedBy = "testReport", cascade=CascadeType.ALL)
+	private BillTest billTest;
 
 	
 }

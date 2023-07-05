@@ -12,7 +12,9 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 
 
 @Entity	
@@ -42,5 +44,11 @@ public class BillTest {
 	@OneToOne
 	@JoinColumn(name = "tpId",insertable=false,updatable=false)
 	private TestPrescription testPrescription;
+	
+	private Integer rpId;
+	@OneToOne
+	@Getter(AccessLevel.NONE)
+	@JoinColumn(name = "rpId",insertable=false,updatable=false)
+	private TestReport testReport;
 
 }
