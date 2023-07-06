@@ -47,6 +47,11 @@ public class TokenGenarator {
 	@JoinColumn(name = "aId",insertable=false,updatable=false)
 	private Appointment appointment;
 	
+	private Integer doId;
+	@OneToOne
+	@JoinColumn(name = "doId",insertable=false,updatable=false)
+	private DoctorDetails doctorDetails;
+	
 	@Getter(AccessLevel.NONE)
 	@EqualsAndHashCode.Exclude
 	@OneToOne(mappedBy = "tokenGenarator")
