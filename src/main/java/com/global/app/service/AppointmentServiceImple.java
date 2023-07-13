@@ -12,6 +12,7 @@ import com.global.app.repo.IAppointmentRepo;
 public class AppointmentServiceImple implements IAppointmentService {
 
 	private IAppointmentRepo repo;
+	
 	@Autowired
 	public AppointmentServiceImple(IAppointmentRepo repo) {
 		this.repo = repo;

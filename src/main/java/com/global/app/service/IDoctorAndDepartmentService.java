@@ -13,4 +13,5 @@ public interface IDoctorAndDepartmentService {
 	public void updateForToken(DoctorDetails doctorDetails);
 	public List<DoctorDetails> allDoctorDetailss();
 	public DoctorDepartment getDoctorDepartment(Integer getdId);
+	public DoctorDetails getDoctorDetailsByuId(Integer uId);
 }

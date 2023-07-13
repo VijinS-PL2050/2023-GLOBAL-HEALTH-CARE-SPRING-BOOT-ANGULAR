@@ -24,7 +24,6 @@ import lombok.Getter;
 @Entity
 @Data
 public class Appointment {
-
 	
 	@Id
 	@SequenceGenerator(name = "zAppSeq", sequenceName = "zAppSeq", initialValue = 5000, allocationSize = 1)

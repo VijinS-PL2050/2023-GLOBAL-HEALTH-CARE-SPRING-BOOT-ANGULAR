@@ -58,4 +58,10 @@ public class DoctorAndDepartmentServiceImple implements IDoctorAndDepartmentServ
 		return depRepo.findById(getdId).orElseThrow(() -> new RuntimeException("Department not found for " + getdId));
 	}
 
+	@Override
+	public DoctorDetails getDoctorDetailsByuId(Integer uId) {
+		// TODO Auto-generated method stub
+		return docRepo.getDoctorByuId(uId);
+	}
+
 }

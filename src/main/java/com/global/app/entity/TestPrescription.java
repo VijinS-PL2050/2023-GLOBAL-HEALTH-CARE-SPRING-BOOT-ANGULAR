@@ -34,7 +34,7 @@ public class TestPrescription {
 	private LocalDate testDay;
 	
 	@Column(nullable = false, columnDefinition = "TINYINT(1)")
-	private Boolean isActive;
+	private Boolean isActive=true;
 	
 	private Integer ttId;
 	@ManyToOne

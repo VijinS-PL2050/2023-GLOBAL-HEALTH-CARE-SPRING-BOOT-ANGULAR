@@ -14,5 +14,8 @@ public interface IDoctorRepo extends CrudRepository<DoctorDetails, Integer> {
 	
 	@Query("FROM DoctorDetails WHERE dId=?1 AND isActive=true order by doctorId")
 	public List<DoctorDetails> getAllDoctorDetailss(Integer deptId);
+	
+	@Query("FROM DoctorDetails WHERE uId=?1 AND isActive=true")
+	public DoctorDetails getDoctorByuId(Integer uId);
 
 }

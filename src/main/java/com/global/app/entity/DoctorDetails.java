@@ -88,7 +88,7 @@ public class DoctorDetails {
 	
 	@NotNull(message = "is required")
 	@Column(nullable = false, columnDefinition = "TINYINT(1)")
-	private Boolean IsActive=true;
+	private Boolean isActive=true;
 	
 	private Integer dId;
 	@ManyToOne
